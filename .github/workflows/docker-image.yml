@@ -14,3 +14,10 @@ jobs:
    steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        username: 'filsserge@gmail.com'
+        password: '@ZoeElsa22'
+        repository: msusdev/webnext
+        tags: latest, ${{ github.run_number }}
