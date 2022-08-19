@@ -21,3 +21,11 @@ jobs:
         password: '@ZoeElsa22'
         repository: msusdev/webnext
         tags: latest, ${{ github.run_number }}
+    - name: Publish to GitHub Packages
+      uses: docker/build-push-action@v2
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: ${{ github.repository }}/webnext
+        tags: latest, ${{ github.run_number }}
