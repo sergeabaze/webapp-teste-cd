@@ -18,6 +18,7 @@ jobs:
         with:
           name: static-site
           path: .next/
+  
   release-project:
     name: Release Project
     runs-on: ubuntu-latest
@@ -26,6 +27,6 @@ jobs:
      - name: Download site content
        uses: actions/download-artifact@v2
        with:
-          name: site-build
+          name: static-site
      - name: View content
        run: ls -R
